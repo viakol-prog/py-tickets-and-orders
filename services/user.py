@@ -26,9 +26,6 @@ def get_user(user_id: int) -> User:
     return User.objects.get(id=user_id)
 
 
-User = get_user_model()
-
-
 def update_user(
     user_id: int,
     username: Optional[str] = None,
@@ -36,7 +33,7 @@ def update_user(
     email: Optional[str] = None,
     first_name: Optional[str] = None,
     last_name: Optional[str] = None
-) -> User:  # Додано тип значення, що повертається
+) -> User:
     user = User.objects.get(id=user_id)
     if username:
         user.username = username
